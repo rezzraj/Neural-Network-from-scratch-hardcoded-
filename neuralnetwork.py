@@ -52,7 +52,7 @@ class MySimpleNN():
 
 
 #defining learning rate
-learning_rate=0.001
+learning_rate=0.01
 #epchs(no of iterations in a loop)
 epochs= 50
 
@@ -87,7 +87,7 @@ with torch.no_grad():
     y_predt = model.forward_pass(x_test_tensor)
     y_predt =(y_predt>0.5).float()
     accuracy= (y_predt==y_test_tensor).float().mean()
-    print(f'model accuracy: {accuracy.item()}')
+    print(f'model accuracy: {accuracy.item()*100:.2f}%')
 
 
 
